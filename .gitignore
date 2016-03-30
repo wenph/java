@@ -1,0 +1,52 @@
+*~
+*.o
+*.so
+*.ko.unsigned
+*.mod.c
+*_post*
+.*
+*.pyc
+*.pyo
+*.iml
+*.class
+agent/*.log
+
+server/.idea/
+agent/.idea/
+webapi/.idea/
+
+target/lib
+#
+# we don't ignore *.a, *.ko
+#
+!*.a
+!*.ko
+
+#
+# file created during kernel compiling
+#
+Module.symvers
+modules.order
+
+#
+# output directory during compiling
+#
+src/defender/build/
+src/main/build/
+src/common/build/
+
+#
+# files created by ctags and cscope
+#
+cscope.sh
+cscope.files
+cscope.in.out
+cscope.out
+cscope.po.out
+tags
+
+
+#
+# dot file excluded
+#
+!.gitignore
