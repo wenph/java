@@ -1,2 +1,2 @@
-# java_day_01
-学习java第一天
+# java
+学习java
