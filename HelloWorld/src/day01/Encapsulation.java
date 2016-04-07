@@ -1,8 +1,6 @@
 package day01;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * Created by pinghua.wph on 2016/3/30.
@@ -60,7 +58,8 @@ class Foo{
         System.out.println("Foo test()" + a);
     }
 }
-class Koo extends Foo{
+
+class Koo extends Foo {
     int b = 2;
     public void test(){
         System.out.println("Koo test()"+a+","+b);

@@ -51,7 +51,7 @@ class Shape{
     }
 }
 
-class Circle extends Shape{
+class Circle extends Shape {
     int r;
     public Circle(){
         this(1,2,3);            // 调用本类的其他构造器
@@ -76,7 +76,7 @@ class Xoo{
 
 //class Yoo extends Xoo{}     // 编译错误，因为调用不到父类的无参构造器
 //class Yoo extends Xoo{public Yoo(){}}   // 编译错误，因为调用不到父类的无参构造器
-class Yoo extends Xoo{
+class Yoo extends Xoo {
     public Yoo(){
         super(100);         // 调用父类Xoo(int)构造器
     }

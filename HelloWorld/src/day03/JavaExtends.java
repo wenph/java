@@ -30,7 +30,7 @@ class Aoo{
     }
 }
 
-class Boo extends Aoo{
+class Boo extends Aoo {
     int b = 2;
     public Boo(){
         super();
@@ -47,7 +47,7 @@ class Person{
     }
 }
 
-class Cheater extends Person{
+class Cheater extends Person {
     String name = "喜洋洋";
     public void whoau(){
         System.out.println(this.name);

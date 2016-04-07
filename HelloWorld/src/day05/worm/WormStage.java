@@ -1,6 +1,6 @@
 package day05.worm;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * Created by pinghua.wph on 2016/4/5.

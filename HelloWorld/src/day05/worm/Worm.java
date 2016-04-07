@@ -1,6 +1,5 @@
 package day05.worm;
 
-import java.util.AbstractCollection;
 import java.util.Arrays;
 
 /**

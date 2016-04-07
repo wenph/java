@@ -28,7 +28,7 @@ class Super{
     }
 }
 
-class Sub extends Super{
+class Sub extends Super {
     public void s(){
         System.out.println("Sub s()");
     }
