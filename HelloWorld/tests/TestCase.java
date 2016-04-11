@@ -2,6 +2,7 @@ import day05.worm.Cell;
 import day05.worm.Worm;
 import day05.worm.WormStage;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by pinghua.wph on 2016/4/5.
@@ -12,6 +13,7 @@ public class TestCase {
         System.out.println("测试Worm构造器");
         Worm worm = new Worm();
         System.out.println(worm);
+        assertEquals(2, 1+1);
     }
 
     @Test
