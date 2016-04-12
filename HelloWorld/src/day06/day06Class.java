@@ -87,6 +87,9 @@ class Point {
     int x;
     int y;
 
+    /**
+     * 在集合中，先计算hashcode，找到hashcode对应的内存地址，如果地址相同，再用equals比较两个对象是否相等，相等则不存放。
+     */
     @Override
     public int hashCode() {
         int result = x;
