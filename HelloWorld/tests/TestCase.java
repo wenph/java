@@ -1,6 +1,6 @@
-import day05.worm.Cell;
-import day05.worm.Worm;
-import day05.worm.WormStage;
+import step01.day05.worm.Cell;
+import step01.day05.worm.Worm;
+import step01.day05.worm.WormStage;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
