@@ -37,5 +37,6 @@ proguard/
 
 /target/
 /out/
+/day11/out/
 
 !.gitignore
