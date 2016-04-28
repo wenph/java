@@ -1,9 +1,7 @@
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -31,6 +29,35 @@ public class ActionServlet extends HttpServlet {
              * 转发之前，不能调用out.close()
              */
             requestDispatcher.forward(request, response);
+        }else if("/count".equals(action)){
+            HttpSession session = request.getSession(true);
+            if(session.isNew()){
+                int count = 0;
+                session.setAttribute("count", count);
+            }else{
+                int count = (Integer)session.getAttribute("count");
+                count += 1;
+                session.setAttribute("count", count);
+            }
+            Cookie[] cookie = request.getCookies();
+
+            String jSessionId = null;
+            for (int i = 0; i < cookie.length; i++) {
+                if (cookie[i].getName().equals("JSESSIONID")){
+                    jSessionId = cookie[i].getValue();
+                    cookie[i].setMaxAge(60*60);
+                    response.addCookie(cookie[i]);
+                }
+            }
+
+            System.out.println("浏览器的cookie：" + jSessionId);
+            System.out.println("服务器的cookie：" + session.getId());
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("count.jsp");
+            requestDispatcher.forward(request, response);
+//            response.setContentType("text/html");
+//            PrintWriter out = response.getWriter();
+//            out.println("<html>"+ session.getId() + "," + session.getAttribute("count") +"</html>");
+//            out.close();
         }
     }
 }
