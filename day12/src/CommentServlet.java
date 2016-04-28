@@ -11,6 +11,7 @@ import javax.servlet.http.*;
 public class CommentServlet extends HttpServlet {
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+        System.out.println("commentServlet service begin");
         res.setContentType("text/html;charset=utf-8");
         PrintWriter out = res.getWriter();
         String content = req.getParameter("content");

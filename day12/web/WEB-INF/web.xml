@@ -3,6 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <filter>
+        <filter-name>filter1</filter-name>
+        <filter-class>CommentFilter1</filter-class>
+    </filter>
     <servlet>
         <servlet-name>CommentServlet</servlet-name>
         <servlet-class>CommentServlet</servlet-class>
@@ -11,4 +15,8 @@
         <servlet-name>CommentServlet</servlet-name>
         <url-pattern>/comment</url-pattern>
     </servlet-mapping>
+    <filter-mapping>
+        <filter-name>filter1</filter-name>
+        <url-pattern>/comment</url-pattern>
+    </filter-mapping>
 </web-app>
