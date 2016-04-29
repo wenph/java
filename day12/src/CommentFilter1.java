@@ -8,6 +8,7 @@ import java.io.PrintWriter;
  * Created by pinghua.wph on 2016/4/28.
  */
 public class CommentFilter1 implements Filter {
+    private FilterConfig filterConfig;
     public CommentFilter1() {
         System.out.println("Filter1 construct");
     }
@@ -20,6 +21,7 @@ public class CommentFilter1 implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         System.out.println("Filter1 is init...");
+        this.filterConfig = filterConfig;
     }
 
     /**
@@ -34,7 +36,8 @@ public class CommentFilter1 implements Filter {
         res.setContentType("text/html;charset=utf-8");
         PrintWriter out = res.getWriter();
         String content = req.getParameter("content");
-        if(content.contains("dog")){
+        String illeagleStr = filterConfig.getInitParameter("illeagleStr");
+        if(content.contains(illeagleStr)){
             // 有敏感字
             out.println("<h1>has dog word</h1>");
             out.close();

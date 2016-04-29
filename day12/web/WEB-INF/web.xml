@@ -6,6 +6,18 @@
     <filter>
         <filter-name>filter1</filter-name>
         <filter-class>CommentFilter1</filter-class>
+        <init-param>
+            <param-name>illeagleStr</param-name>
+            <param-value>dog</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>filter2</filter-name>
+        <filter-class>CommentFilter2</filter-class>
+        <init-param>
+            <param-name>size</param-name>
+            <param-value>10</param-value>
+        </init-param>
     </filter>
     <servlet>
         <servlet-name>CommentServlet</servlet-name>
@@ -15,8 +27,13 @@
         <servlet-name>CommentServlet</servlet-name>
         <url-pattern>/comment</url-pattern>
     </servlet-mapping>
+    <!-- filter-mapping的先后顺序决定执行先后顺序-->
     <filter-mapping>
         <filter-name>filter1</filter-name>
+        <url-pattern>/comment</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>filter2</filter-name>
         <url-pattern>/comment</url-pattern>
     </filter-mapping>
 </web-app>
